@@ -1,0 +1,225 @@
+/* Live Matches Page Styles */
+.live-matches-section {
+    padding: 2rem 0;
+}
+
+.live-matches-section h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Filters Section */
+.filters {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+}
+
+.sport-filter,
+.league-filter {
+    flex: 1;
+}
+
+.filters label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.filters select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.filters select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Matches Grid */
+.matches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Match Card */
+.match-card {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+}
+
+.match-header {
+    padding: 1rem;
+    background: var(--bg-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.match-sport {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.match-league {
+    color: var(--text-secondary);
+}
+
+.match-status.live {
+    background: var(--danger-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Match Content */
+.match-content {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.team {
+    text-align: center;
+}
+
+.team img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.team-name {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.match-info {
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.score {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.time {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+}
+
+/* Match Events */
+.match-events {
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.match-events h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+}
+
+.event-time {
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 40px;
+}
+
+.event-type {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+}
+
+.event-type.goal {
+    background: var(--success-color);
+}
+
+.event-type.three_pointer,
+.event-type.dunk {
+    background: var(--secondary-color);
+}
+
+.event-player {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+    }
+
+    .matches-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .match-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .team img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .match-info {
+        padding: 1rem 0;
+    }
+} 

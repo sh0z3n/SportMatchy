@@ -1,0 +1,547 @@
+2025-05-07 00:22:46 - Erreur de connexion à la base de données: SQLSTATE[HY000] [2002] No such file or directory
+[07-May-2025 00:22:46 Europe/Paris] PHP Fatal error:  Uncaught Exception: Impossible de se connecter à la base de données in /home/sh0z3n/SportMatchy/includes/database.php:20
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(26): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/tests/test.php(14): Database::getInstance()
+#2 /home/sh0z3n/SportMatchy/tests/test.php(122): TestSuite->__construct()
+#3 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 20
+2025-05-07 00:23:15 - Erreur de connexion à la base de données: SQLSTATE[HY000] [2002] No such file or directory
+[07-May-2025 00:23:15 Europe/Paris] PHP Warning:  ini_set(): Session ini settings cannot be changed after headers have already been sent in /home/sh0z3n/SportMatchy/includes/session.php on line 8
+[07-May-2025 00:23:15 Europe/Paris] PHP Warning:  ini_set(): Session ini settings cannot be changed after headers have already been sent in /home/sh0z3n/SportMatchy/includes/session.php on line 9
+[07-May-2025 00:23:15 Europe/Paris] PHP Warning:  ini_set(): Session ini settings cannot be changed after headers have already been sent in /home/sh0z3n/SportMatchy/includes/session.php on line 10
+[07-May-2025 00:23:15 Europe/Paris] PHP Warning:  ini_set(): Session ini settings cannot be changed after headers have already been sent in /home/sh0z3n/SportMatchy/includes/session.php on line 11
+[07-May-2025 00:23:15 Europe/Paris] PHP Warning:  ini_set(): Session ini settings cannot be changed after headers have already been sent in /home/sh0z3n/SportMatchy/includes/session.php on line 12
+[07-May-2025 00:23:15 Europe/Paris] PHP Warning:  ini_set(): Session ini settings cannot be changed after headers have already been sent in /home/sh0z3n/SportMatchy/includes/session.php on line 13
+[07-May-2025 00:23:15 Europe/Paris] PHP Warning:  session_name(): Session name cannot be changed after headers have already been sent in /home/sh0z3n/SportMatchy/includes/session.php on line 16
+[07-May-2025 00:23:15 Europe/Paris] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/sh0z3n/SportMatchy/includes/session.php on line 17
+[07-May-2025 00:23:15 Europe/Paris] PHP Warning:  session_regenerate_id(): Session ID cannot be regenerated when there is no active session in /home/sh0z3n/SportMatchy/includes/session.php on line 32
+2025-05-07 00:25:52 - Erreur de connexion à la base de données: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 00:25:52 Europe/Paris] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/sh0z3n/SportMatchy/includes/session.php on line 18
+[07-May-2025 00:25:52 Europe/Paris] PHP Warning:  session_regenerate_id(): Session ID cannot be regenerated when there is no active session in /home/sh0z3n/SportMatchy/includes/session.php on line 33
+2025-05-07 00:26:15 - Erreur de connexion à la base de données: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 00:26:15 Europe/Paris] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/sh0z3n/SportMatchy/includes/session.php on line 18
+[07-May-2025 00:26:15 Europe/Paris] PHP Warning:  session_regenerate_id(): Session ID cannot be regenerated when there is no active session in /home/sh0z3n/SportMatchy/includes/session.php on line 33
+[07-May-2025 00:26:49 Europe/Paris] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/sh0z3n/SportMatchy/includes/session.php on line 18
+[07-May-2025 00:26:49 Europe/Paris] PHP Warning:  session_regenerate_id(): Session ID cannot be regenerated when there is no active session in /home/sh0z3n/SportMatchy/includes/session.php on line 33
+[07-May-2025 00:27:04 Europe/Paris] PHP Warning:  ini_set(): Session ini settings cannot be changed when a session is active in /home/sh0z3n/SportMatchy/includes/config.php on line 45
+[07-May-2025 00:27:04 Europe/Paris] PHP Warning:  ini_set(): Session ini settings cannot be changed when a session is active in /home/sh0z3n/SportMatchy/includes/config.php on line 46
+[07-May-2025 00:27:04 Europe/Paris] PHP Warning:  ini_set(): Session ini settings cannot be changed when a session is active in /home/sh0z3n/SportMatchy/includes/config.php on line 47
+[07-May-2025 00:27:44 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on null in /home/sh0z3n/SportMatchy/includes/database.php:50
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/index.php(12): Database->fetchAll()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 50
+[07-May-2025 00:27:44 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on null in /home/sh0z3n/SportMatchy/includes/database.php:50
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/index.php(12): Database->fetchAll()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 50
+[07-May-2025 00:44:12 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to undefined method Session::generateCSRFToken() in /home/sh0z3n/SportMatchy/create-event.php:85
+Stack trace:
+#0 {main}
+  thrown in /home/sh0z3n/SportMatchy/create-event.php on line 85
+[07-May-2025 00:49:40 Europe/Paris] PHP Fatal error:  Cannot redeclare Session::validateCSRFToken() in /home/sh0z3n/SportMatchy/includes/session.php on line 263
+[07-May-2025 00:52:47 Europe/Paris] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in /home/sh0z3n/SportMatchy/profile.php on line 139
+[07-May-2025 00:52:47 Europe/Paris] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/usr/share/php') in /home/sh0z3n/SportMatchy/profile.php on line 139
+[07-May-2025 00:52:47 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 145
+[07-May-2025 00:52:47 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 188
+[07-May-2025 00:52:47 Europe/Paris] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in /home/sh0z3n/SportMatchy/profile.php on line 255
+[07-May-2025 00:52:47 Europe/Paris] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='.:/usr/share/php') in /home/sh0z3n/SportMatchy/profile.php on line 255
+[07-May-2025 00:52:56 Europe/Paris] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in /home/sh0z3n/SportMatchy/sports.php on line 35
+[07-May-2025 00:52:56 Europe/Paris] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/usr/share/php') in /home/sh0z3n/SportMatchy/sports.php on line 35
+[07-May-2025 00:52:56 Europe/Paris] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in /home/sh0z3n/SportMatchy/sports.php on line 76
+[07-May-2025 00:52:56 Europe/Paris] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='.:/usr/share/php') in /home/sh0z3n/SportMatchy/sports.php on line 76
+[07-May-2025 00:53:00 Europe/Paris] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in /home/sh0z3n/SportMatchy/create-event.php on line 97
+[07-May-2025 00:53:00 Europe/Paris] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/usr/share/php') in /home/sh0z3n/SportMatchy/create-event.php on line 97
+[07-May-2025 00:53:00 Europe/Paris] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in /home/sh0z3n/SportMatchy/create-event.php on line 169
+[07-May-2025 00:53:00 Europe/Paris] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='.:/usr/share/php') in /home/sh0z3n/SportMatchy/create-event.php on line 169
+[07-May-2025 00:53:45 Europe/Paris] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in /home/sh0z3n/SportMatchy/profile.php on line 139
+[07-May-2025 00:53:45 Europe/Paris] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/usr/share/php') in /home/sh0z3n/SportMatchy/profile.php on line 139
+[07-May-2025 00:53:45 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 145
+[07-May-2025 00:53:45 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 188
+[07-May-2025 00:53:45 Europe/Paris] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in /home/sh0z3n/SportMatchy/profile.php on line 255
+[07-May-2025 00:53:45 Europe/Paris] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='.:/usr/share/php') in /home/sh0z3n/SportMatchy/profile.php on line 255
+[07-May-2025 00:53:49 Europe/Paris] PHP Warning:  include(includes/header.php): Failed to open stream: No such file or directory in /home/sh0z3n/SportMatchy/sports.php on line 35
+[07-May-2025 00:53:49 Europe/Paris] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/usr/share/php') in /home/sh0z3n/SportMatchy/sports.php on line 35
+[07-May-2025 00:53:49 Europe/Paris] PHP Warning:  include(includes/footer.php): Failed to open stream: No such file or directory in /home/sh0z3n/SportMatchy/sports.php on line 76
+[07-May-2025 00:53:49 Europe/Paris] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='.:/usr/share/php') in /home/sh0z3n/SportMatchy/sports.php on line 76
+[07-May-2025 01:01:53 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 145
+[07-May-2025 01:01:53 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 188
+[07-May-2025 01:01:55 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 59
+[07-May-2025 01:01:55 Europe/Paris] Query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'avatar' in 'field list'
+[07-May-2025 01:01:55 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 145
+[07-May-2025 01:01:55 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 188
+[07-May-2025 01:02:05 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 145
+[07-May-2025 01:02:05 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 188
+[07-May-2025 01:07:37 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 145
+[07-May-2025 01:07:37 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 188
+[07-May-2025 01:11:09 Europe/Paris] Query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.avatar' in 'field list'
+[07-May-2025 01:11:09 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/event.php(37): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 01:18:07 Europe/Paris] Query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.avatar' in 'field list'
+[07-May-2025 01:18:07 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/event.php(37): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 02:01:05 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password' in 'field list'
+SQL: INSERT INTO users (username, email, password, created_at) VALUES (?, ?, ?, NOW())
+[07-May-2025 02:01:05 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:41
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/register.php(55): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 41
+[07-May-2025 02:21:25 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password' in 'field list'
+SQL: INSERT INTO users (username, email, password, created_at) VALUES (?, ?, ?, NOW())
+[07-May-2025 02:21:25 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:41
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/register.php(55): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 41
+[07-May-2025 02:21:34 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.avatar' in 'field list'
+SQL: 
+    SELECT ep.*, u.username, u.avatar
+    FROM event_participants ep
+    JOIN users u ON ep.user_id = u.id
+    WHERE ep.event_id = ?
+    ORDER BY ep.status = 'joined' DESC, ep.created_at ASC
+
+[07-May-2025 02:21:34 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:41
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/event.php(37): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 41
+[07-May-2025 02:26:28 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.avatar' in 'field list'
+SQL: 
+    SELECT ep.*, u.username, u.avatar
+    FROM event_participants ep
+    JOIN users u ON ep.user_id = u.id
+    WHERE ep.event_id = ?
+    ORDER BY ep.status = 'joined' DESC, ep.created_at ASC
+
+[07-May-2025 02:26:28 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:41
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/event.php(37): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 41
+[07-May-2025 02:26:55 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password' in 'field list'
+SQL: INSERT INTO users (username, email, password, created_at) VALUES (?, ?, ?, NOW())
+[07-May-2025 02:26:55 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:41
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/register.php(55): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 41
+[07-May-2025 02:32:51 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'jxs8f0yqbvp7qo9i2lm3'
+[07-May-2025 02:32:51 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:27
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(33): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/register.php(38): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 27
+[07-May-2025 02:32:57 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'jxs8f0yqbvp7qo9i2lm3'
+[07-May-2025 02:32:57 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:27
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(33): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/index.php(10): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 27
+[07-May-2025 02:34:47 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'sportmatchy_user'@'86.71.230.41' (using password: YES)
+[07-May-2025 02:34:47 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:26
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(32): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/index.php(10): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 26
+[07-May-2025 02:36:40 Europe/Paris] Database query failed: SQLSTATE[HY000]: General error: 1 no such column: e.start_time
+SQL: 
+    SELECT e.*, s.name as sport_name, s.icon as sport_icon, u.username as creator_name,
+           (SELECT COUNT(*) FROM event_participants WHERE event_id = e.id AND status = 'joined') as participant_count
+    FROM events e
+    JOIN sports s ON e.sport_id = s.id
+    JOIN users u ON e.creator_id = u.id
+    WHERE e.start_time > NOW()
+    ORDER BY e.start_time ASC
+    LIMIT 6
+
+[07-May-2025 02:36:40 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:118
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/index.php(13): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 118
+[07-May-2025 02:36:41 Europe/Paris] Database query failed: SQLSTATE[HY000]: General error: 1 no such column: e.start_time
+SQL: 
+    SELECT e.*, s.name as sport_name, s.icon as sport_icon, u.username as creator_name,
+           (SELECT COUNT(*) FROM event_participants WHERE event_id = e.id AND status = 'joined') as participant_count
+    FROM events e
+    JOIN sports s ON e.sport_id = s.id
+    JOIN users u ON e.creator_id = u.id
+    WHERE e.start_time > NOW()
+    ORDER BY e.start_time ASC
+    LIMIT 6
+
+[07-May-2025 02:36:41 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:118
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/index.php(13): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 118
+{"timestamp":"2025-05-07 02:42:53","type":8192,"message":"strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated","file":"\/home\/sh0z3n\/SportMatchy\/scripts\/setup_cron.php","line":25}
+[07-May-2025 02:42:53 Europe/Paris] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in /home/sh0z3n/SportMatchy/scripts/setup_cron.php on line 25
+[07-May-2025 02:46:15 Europe/Paris] PHP Deprecated:  Creation of dynamic property Database::$statement is deprecated in /home/sh0z3n/SportMatchy/includes/database.php on line 198
+[07-May-2025 02:46:36 Europe/Paris] PHP Deprecated:  Creation of dynamic property Database::$statement is deprecated in /home/sh0z3n/SportMatchy/includes/database.php on line 198
+[07-May-2025 02:46:38 Europe/Paris] PHP Deprecated:  Creation of dynamic property Database::$statement is deprecated in /home/sh0z3n/SportMatchy/includes/database.php on line 198
+[07-May-2025 02:51:17 Europe/Paris] PHP Deprecated:  Creation of dynamic property Database::$statement is deprecated in /home/sh0z3n/SportMatchy/includes/database.php on line 198
+[07-May-2025 02:51:20 Europe/Paris] PHP Deprecated:  Creation of dynamic property Database::$statement is deprecated in /home/sh0z3n/SportMatchy/includes/database.php on line 198
+[07-May-2025 02:51:31 Europe/Paris] PHP Deprecated:  Creation of dynamic property Database::$statement is deprecated in /home/sh0z3n/SportMatchy/includes/database.php on line 198
+[07-May-2025 02:51:32 Europe/Paris] PHP Deprecated:  Creation of dynamic property Database::$statement is deprecated in /home/sh0z3n/SportMatchy/includes/database.php on line 198
+[07-May-2025 02:51:34 Europe/Paris] PHP Deprecated:  Creation of dynamic property Database::$statement is deprecated in /home/sh0z3n/SportMatchy/includes/database.php on line 198
+[07-May-2025 02:51:59 Europe/Paris] Database query error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password' in 'field list'
+[07-May-2025 02:51:59 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/register.php(55): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 02:51:59 Europe/Paris] PHP Deprecated:  Creation of dynamic property Database::$statement is deprecated in /home/sh0z3n/SportMatchy/includes/database.php on line 198
+[07-May-2025 02:54:31 Europe/Paris] PHP Warning:  The magic method Database::__wakeup() must have public visibility in /home/sh0z3n/SportMatchy/includes/database.php on line 210
+[07-May-2025 02:55:59 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on array in /home/sh0z3n/SportMatchy/events.php:48
+Stack trace:
+#0 {main}
+  thrown in /home/sh0z3n/SportMatchy/events.php on line 48
+[07-May-2025 03:00:44 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:00:44 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/events.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:00:45 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:00:45 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/events.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:00:45 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:00:45 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/events.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:00:46 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:00:46 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/events.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:00:46 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:00:46 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/events.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:00:46 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:00:46 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/events.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:00:46 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:00:46 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/events.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:00:46 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:00:46 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/events.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:00:46 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:00:46 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/events.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:00:47 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:00:47 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/events.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:00:47 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:00:47 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/events.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:00:49 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:00:49 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/index.php(10): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:07:46 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:07:46 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/index.php(10): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:07:49 Europe/Paris] Database connection failed: SQLSTATE[HY000] [1698] Access denied for user 'root'@'localhost'
+[07-May-2025 03:07:49 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/index.php(10): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[07-May-2025 03:11:40 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:11:40 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/events.php(14): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 03:15:00 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:15:00 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:15:05 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:15:05 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:15:08 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:15:08 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:15:18 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:15:18 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:21:28 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:21:28 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:21:33 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:21:33 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:21:42 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:21:42 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:21:49 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:21:49 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:27:50 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:27:50 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:27:52 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:27:52 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:28:33 Europe/Paris] PHP Fatal error:  Uncaught Error: Cannot use object of type PDOStatement as array in /home/sh0z3n/SportMatchy/includes/auth.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/register.php(45): Auth->register()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/auth.php on line 40
+[07-May-2025 03:29:38 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password' in 'field list'
+[07-May-2025 03:30:04 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password' in 'field list'
+[07-May-2025 03:31:42 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 145
+[07-May-2025 03:31:42 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 188
+[07-May-2025 03:31:47 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:31:47 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:31:52 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.avatar' in 'field list'
+[07-May-2025 03:31:52 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/event.php(37): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 03:38:45 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.avatar' in 'field list'
+[07-May-2025 03:38:45 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/event.php(37): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 03:38:47 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.avatar' in 'field list'
+[07-May-2025 03:38:47 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/event.php(37): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 03:38:48 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.avatar' in 'field list'
+[07-May-2025 03:38:48 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/event.php(37): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 03:39:30 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 145
+[07-May-2025 03:39:30 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 188
+[07-May-2025 03:39:45 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:39:45 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:42:20 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:42:20 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:42:22 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 145
+[07-May-2025 03:42:22 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 188
+[07-May-2025 03:44:41 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 03:44:41 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 03:45:00 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:45:00 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:45:03 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 03:45:03 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 03:55:18 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 03:55:18 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 03:55:19 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:55:19 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 03:55:39 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 03:55:39 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 03:55:45 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 03:55:45 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 04:09:10 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 04:09:10 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 04:09:13 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 04:09:13 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 04:17:32 Europe/Paris] PHP Warning:  Undefined array key "password" in /home/sh0z3n/SportMatchy/login.php on line 31
+[07-May-2025 04:17:32 Europe/Paris] PHP Deprecated:  password_verify(): Passing null to parameter #2 ($hash) of type string is deprecated in /home/sh0z3n/SportMatchy/login.php on line 31
+[07-May-2025 04:17:32 Europe/Paris] PHP Warning:  Undefined array key "password" in /home/sh0z3n/SportMatchy/login.php on line 31
+[07-May-2025 04:17:32 Europe/Paris] PHP Deprecated:  password_verify(): Passing null to parameter #2 ($hash) of type string is deprecated in /home/sh0z3n/SportMatchy/login.php on line 31
+[07-May-2025 04:45:48 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 04:45:48 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 04:45:51 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 04:45:51 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 04:53:53 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 04:53:53 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 04:53:59 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 04:53:59 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 05:08:01 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 05:08:01 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 05:08:05 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 05:08:05 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 05:08:40 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 05:08:40 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 12:27:58 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 12:27:58 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 12:28:04 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 12:28:04 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 12:28:22 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 12:28:22 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 14:23:36 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:23:36 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:24:04 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 14:24:04 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 14:24:38 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:24:38 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:25:06 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 14:25:06 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 14:25:12 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 14:25:12 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 14:26:30 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 14:26:30 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 14:26:58 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:26:58 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:28:41 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:28:41 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:28:54 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:28:54 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:28:59 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:28:59 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:29:04 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:29:04 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:29:09 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:29:09 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:29:17 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:29:17 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:29:22 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:29:22 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:29:26 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:29:26 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:29:30 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 14:29:30 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 14:29:32 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 14:29:32 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 14:29:39 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:29:39 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:30:17 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:30:17 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:30:18 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 14:30:18 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 14:30:49 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:30:49 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:50:26 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:50:26 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:50:30 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[07-May-2025 14:50:30 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 14:50:34 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 14:50:34 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 14:59:01 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 14:59:01 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 15:00:01 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 15:00:01 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 15:00:06 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'event_date' in 'where clause'
+[07-May-2025 15:00:06 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 15:00:06 Europe/Paris] PHP Warning:  Undefined variable $totalPages in /home/sh0z3n/SportMatchy/events.php on line 114
+[07-May-2025 15:00:17 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'event_date' in 'where clause'
+[07-May-2025 15:00:17 Europe/Paris] Error fetching events/sports: Database error occurred. Please try again later.
+[07-May-2025 15:00:17 Europe/Paris] PHP Warning:  Undefined variable $totalPages in /home/sh0z3n/SportMatchy/events.php on line 114
+[07-May-2025 22:48:03 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 22:48:03 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 22:48:07 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 22:48:07 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 22:48:11 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 22:48:11 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 22:48:38 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 22:48:38 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 22:48:46 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 22:48:46 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 22:55:56 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 22:55:56 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 22:56:01 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 22:56:01 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 23:04:25 Europe/Paris] PHP Fatal error:  Uncaught Error: Class "Session" not found in /home/sh0z3n/SportMatchy/includes/header.php:39
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/about.php(5): require_once()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/header.php on line 39
+[07-May-2025 23:04:27 Europe/Paris] PHP Fatal error:  Uncaught Error: Class "Session" not found in /home/sh0z3n/SportMatchy/includes/header.php:39
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/about.php(5): require_once()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/header.php on line 39
+[07-May-2025 23:04:31 Europe/Paris] PHP Fatal error:  Uncaught Error: Class "Session" not found in /home/sh0z3n/SportMatchy/includes/header.php:39
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/about.php(5): require_once()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/header.php on line 39
+[07-May-2025 23:15:11 Europe/Paris] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'event_date' in 'order clause' in /home/sh0z3n/SportMatchy/events.php:10
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/events.php(10): PDO->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/events.php on line 10
+[07-May-2025 23:15:25 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 23:15:25 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[07-May-2025 23:19:22 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'event_date' in 'order clause'
+[07-May-2025 23:19:22 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/events.php(8): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 23:22:31 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'event_date' in 'order clause'
+[07-May-2025 23:22:31 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/events.php(8): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 23:22:33 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'event_date' in 'order clause'
+[07-May-2025 23:22:33 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/events.php(8): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 23:23:35 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'event_date' in 'order clause'
+[07-May-2025 23:23:35 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/events.php(8): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 23:24:22 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'event_date' in 'order clause'
+[07-May-2025 23:24:22 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'event_date' in 'order clause' | SQL: SELECT * FROM events ORDER BY event_date DESC in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/events.php(8): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[07-May-2025 23:26:49 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[07-May-2025 23:26:49 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
