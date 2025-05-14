@@ -70,6 +70,19 @@ $csrfToken = Session::generateCSRFToken();
     <?php include 'includes/header.php'; ?>
 
     <div class="container">
+        <?php if (Session::isLoggedIn()): ?>
+            <div class="stats-header" style="text-align: right; margin-bottom: 1.5rem;">
+                <a href="profile.php" class="btn btn-secondary">
+                    <i class="fas fa-user"></i> Retour au profil
+                </a>
+            </div>
+        <?php else: ?>
+            <div class="stats-header" style="text-align: right; margin-bottom: 1.5rem;">
+                <a href="index.php" class="btn btn-secondary">
+                    <i class="fas fa-home"></i> Retour à l'accueil
+                </a>
+            </div>
+        <?php endif; ?>
         <div class="stats-section">
             <h1>Mes Statistiques</h1>
 

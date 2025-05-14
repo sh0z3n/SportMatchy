@@ -1,108 +1,55 @@
-# SportMatchy 🏃‍♂️
+# SportMatchy
 
-SportMatchy est une plateforme web permettant aux sportifs de trouver des partenaires pour leurs activités sportives en temps réel.
+SportMatchy est une plateforme web de rencontre sportive développée 
 
-## Membres du groupe
-- [Votre nom]
-- [Nom de votre binôme]
+## Présentation
 
-## Structure du Projet
+Ce projet a été réalisé par des mokhtar derbazi et tadjer abdelkrim pour le projet de WEB unice (PHP, JS, MySQL, WebSocket, etc). Il permet de :
+- Créer et rejoindre des événements sportifs
+- Discuter en groupe via un chat en temps réel
+- Visualiser les événements sur une carte et dans un calendrier
+- Gérer son profil et ses préférences sportives
 
+<!-- **Remarque :** Ce projet n'est pas une application de production parfaite, mais une base pédagogique pour progresser en développement web. -->
+
+## Fonctionnalités principales
+- Inscription et connexion utilisateur
+- Création et gestion d'événements sportifs
+- Chat de groupe en temps réel (WebSocket)
+- Carte des événements (Google Maps)
+- list des resulats des matches foot lives
+- Calendrier des événements (FullCalendar)
+- Mode sombre
+
+## Diagramme des entités principales
+
+```mermaid
+graph TD;
+  Users((Users))
+  Events((Events))
+  EventParticipants((EventParticipants))
+  ChatGroups((ChatGroups))
+  ChatMessages((ChatMessages))
+  Sports((Sports))
+
+  Users -- 1,n --> EventParticipants
+  Events -- 1,n --> EventParticipants
+  Events -- 1,1 --> ChatGroups
+  ChatGroups -- 1,n --> ChatMessages
+  Users -- 1,n --> ChatMessages
+  Events -- n,1 --> Sports
 ```
-SportMatchy/
-├── assets/
-│   ├── css/
-│   │   ├── style.css
-│   │   └── responsive.css
-│   ├── js/
-│   │   ├── main.js
-│   │   ├── events.js
-│   │   └── realtime.js
-│   └── images/
-├── includes/
-│   ├── config.php
-│   ├── database.php
-│   ├── functions.php
-│   └── session.php
-├── pages/
-│   ├── index.php
-│   ├── events.php
-│   ├── profile.php
-│   └── create-event.php
-├── api/
-│   ├── events.php
-│   ├── users.php
-│   └── realtime.php
-└── index.php
-```
 
-## Fonctionnalités
+## Installation rapide
 
-### 1. Authentification
-- Inscription
-- Connexion
-- Déconnexion
-- Gestion des sessions
+1. Cloner le répôt
+2. Importer le fichier `database.sql` dans MySQL
+3. Configurer la base de données dans `includes/config.php`
+4. Lancer le serveur PHP et le serveur WebSocket
+5. Accéder à `index.php` dans le navigateur
 
-### 2. Gestion des Événements Sportifs
-- Création d'événements sportifs
-- Recherche d'événements
-- Filtrage par sport/date/lieu
-- Participation aux événements
-- Annulation de participation
+## Auteurs
+- Mokhtar (sh0z3n)
+- Abdelkrim
 
-### 3. Interactions en Temps Réel
-- Mise à jour en temps réel des participants
-- Notifications de nouveaux événements
-- Chat intégré pour chaque événement
-- Statut de disponibilité des participants
-
-### 4. Profils Utilisateurs
-- Informations personnelles
-- Historique des événements
-- Préférences sportives
-- Statistiques de participation
-
-### 5. Interface Responsive
-- Design adaptatif (mobile/desktop)
-- Navigation intuitive
-- Thème professionnel et moderne
-
-## Technologies Utilisées
-
-- HTML5
-- CSS3 (Flexbox, Grid, Media Queries)
-- JavaScript (ES6+)
-- PHP 8+
-- MySQL
-- AJAX
-- WebSockets (pour le temps réel)
-
-## Installation
-
-1. Cloner le repository
-2. Configurer la base de données dans `includes/config.php`
-3. Importer le schéma de la base de données
-4. Lancer le serveur web local
-
-## Base de Données
-
-Tables principales :
-- users
-- events
-- sports
-- event_participants
-- messages
-
-## Tests
-
-Le projet inclut des tests unitaires pour les fonctionnalités principales :
-- Tests d'authentification
-- Tests de création d'événements
-- Tests des interactions en temps réel
-
-## Démonstration
-Une vidéo de démonstration est disponible [lien vers la vidéo]
-
-## Diagramme d'architecture
-[Lien vers le diagramme d'architecture]
+Projet réalisé dans le cadre d'un cours universitaire L22 . Pour toute question, contactez-nous !

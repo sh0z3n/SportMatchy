@@ -39,12 +39,73 @@ if (!$event) {
         <span class="event-status"><i class="fas fa-info-circle"></i> <?= ucfirst($event['status']) ?></span>
     </div>
     <div class="event-description">
-        <h3>Description</h3>
-        <p><?= nl2br(htmlspecialchars($event['description'])) ?></p>
+        <h2>Description</h2>
+        <p><?php echo nl2br(htmlspecialchars($event['description'])); ?></p>
+        <?php if (Session::isLoggedIn()): ?>
+            <?php
+            $eventIdDebug = $eventId;
+            $userIdDebug = Session::getUserId();
+            $isParticipating = $db->query('SELECT COUNT(*) FROM event_participants WHERE event_id = ? AND user_id = ?', [$eventId, $userIdDebug])->fetchColumn() > 0;
+            ?>
+            <?php if ($isParticipating): ?>
+                <button class="btn btn-success" disabled>Vous participez déjà</button>
+            <?php else: ?>
+                <form id="participate-form-desc" method="post" action="api/join-event.php" style="margin-top:1rem;">
+                    <input type="hidden" name="event_id" value="<?php echo $eventId; ?>">
+                    <input type="hidden" name="csrf_token" value="<?php echo Session::generateCSRFToken(); ?>">
+                    <button type="submit" class="btn btn-primary" id="participate-btn-desc">Participer</button>
+                </form>
+                <div id="participate-message-desc" style="margin-top:0.5rem;"></div>
+                <script>
+                document.getElementById('participate-form-desc').onsubmit = function(e) {
+                    e.preventDefault();
+                    var btn = document.getElementById('participate-btn-desc');
+                    btn.disabled = true;
+                    btn.textContent = '...';
+                    var formData = new FormData(this);
+                    fetch('api/join-event.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(r => r.json())
+                    .then(data => {
+                        if (data.success) {
+                            btn.className = 'btn btn-success';
+                            btn.textContent = 'Participation confirmée !';
+                            btn.disabled = true;
+                        } else {
+                            btn.disabled = false;
+                            btn.textContent = 'Participer';
+                            document.getElementById('participate-message-desc').textContent = data.error || 'Erreur lors de la participation.';
+                        }
+                    })
+                    .catch(() => {
+                        btn.disabled = false;
+                        btn.textContent = 'Participer';
+                        document.getElementById('participate-message-desc').textContent = 'Erreur réseau.';
+                    });
+                };
+                </script>
+            <?php endif; ?>
+            <a href="/chat.php?event_id=<?php echo $eventId; ?>" class="btn btn-secondary" style="margin-top:1rem;">Chat de l'événement</a>
+        <?php endif; ?>
     </div>
     <div class="event-participants">
-        <h3>Participants</h3>
-        <!-- Optionally, list participants here if you want -->
+        <h2>Participants</h2>
+        <div id="participants-list">
+            <?php
+            $participants = $db->query('SELECT u.username FROM event_participants ep JOIN users u ON ep.user_id = u.id WHERE ep.event_id = ?', [$eventId])->fetchAll();
+            if ($participants):
+                echo '<ul>';
+                foreach ($participants as $p) {
+                    echo '<li>' . htmlspecialchars($p['username']) . '</li>';
+                }
+                echo '</ul>';
+            else:
+                echo '<p>Aucun participant pour le moment.</p>';
+            endif;
+            ?>
+        </div>
     </div>
     <a href="events.php" class="btn btn-outline">Retour aux événements</a>
 </main>

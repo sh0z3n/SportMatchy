@@ -545,3 +545,138 @@ Stack trace:
   thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
 [07-May-2025 23:26:49 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
 [07-May-2025 23:26:49 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[13-May-2025 23:07:45 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sport' in 'field list'
+[13-May-2025 23:07:45 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sport' in 'field list' | SQL: INSERT INTO events (title, sport, event_date, location, description) VALUES (?, ?, ?, ?, ?) in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/create-event.php(17): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[13-May-2025 23:14:32 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to private Database::__construct() from global scope in /home/sh0z3n/SportMatchy/create-event.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/sh0z3n/SportMatchy/create-event.php on line 17
+[13-May-2025 23:16:15 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to private Database::__construct() from global scope in /home/sh0z3n/SportMatchy/index.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/sh0z3n/SportMatchy/index.php on line 7
+[13-May-2025 23:16:20 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to private Database::__construct() from global scope in /home/sh0z3n/SportMatchy/matches.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/sh0z3n/SportMatchy/matches.php on line 15
+[13-May-2025 23:18:15 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to private Database::__construct() from global scope in /home/sh0z3n/SportMatchy/index.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/sh0z3n/SportMatchy/index.php on line 7
+[13-May-2025 23:24:01 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[13-May-2025 23:24:01 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause' | SQL: SELECT e.*, s.name as sport_name, u.username as creator_name, 
+     (SELECT COUNT(*) FROM event_participants WHERE event_id = e.id AND status = 'confirmed') as participant_count
+     FROM events e 
+     JOIN sports s ON e.sport_id = s.id 
+     JOIN users u ON e.creator_id = u.id 
+     WHERE e.event_date > NOW() 
+     ORDER BY e.event_date ASC 
+     LIMIT 3 in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/index.php(10): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[13-May-2025 23:24:11 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[13-May-2025 23:24:11 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause' | SQL: SELECT e.*, s.name as sport_name, u.username as creator_name, 
+     (SELECT COUNT(*) FROM event_participants WHERE event_id = e.id AND status = 'confirmed') as participant_count
+     FROM events e 
+     JOIN sports s ON e.sport_id = s.id 
+     JOIN users u ON e.creator_id = u.id 
+     WHERE e.event_date > NOW() 
+     ORDER BY e.event_date ASC 
+     LIMIT 3 in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/index.php(10): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[13-May-2025 23:24:26 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause'
+[13-May-2025 23:24:26 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.event_date' in 'where clause' | SQL: SELECT e.*, s.name as sport_name, u.username as creator_name, 
+     (SELECT COUNT(*) FROM event_participants WHERE event_id = e.id AND status = 'confirmed') as participant_count
+     FROM events e 
+     JOIN sports s ON e.sport_id = s.id 
+     JOIN users u ON e.creator_id = u.id 
+     WHERE e.event_date > NOW() 
+     ORDER BY e.event_date ASC 
+     LIMIT 3 in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/index.php(10): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[13-May-2025 23:54:41 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[13-May-2025 23:54:41 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[13-May-2025 23:58:30 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[13-May-2025 23:58:30 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[14-May-2025 00:00:31 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[14-May-2025 00:00:31 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[14-May-2025 00:17:55 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[14-May-2025 00:17:55 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[14-May-2025 00:54:38 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[14-May-2025 00:54:38 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[14-May-2025 01:18:28 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[14-May-2025 01:18:28 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[14-May-2025 01:53:58 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[14-May-2025 01:53:58 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[14-May-2025 02:18:08 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[14-May-2025 02:18:08 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[14-May-2025 02:57:38 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[14-May-2025 02:57:38 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[14-May-2025 03:02:12 Europe/Paris] PHP Warning:  Undefined array key "avatar" in /home/sh0z3n/SportMatchy/profile.php on line 146
+[14-May-2025 03:02:12 Europe/Paris] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/sh0z3n/SportMatchy/profile.php on line 189
+[14-May-2025 03:22:22 Europe/Paris] Database query failed: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+[14-May-2025 03:22:22 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1 | SQL: INSERT INTO event_participants (event_id, user_id, status) VALUES (?, ?, ?) in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/api/join-event.php(39): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[14-May-2025 03:22:24 Europe/Paris] Database query failed: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+[14-May-2025 03:22:24 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1 | SQL: INSERT INTO event_participants (event_id, user_id, status) VALUES (?, ?, ?) in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/api/join-event.php(39): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[14-May-2025 03:27:58 Europe/Paris] Database query failed: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+[14-May-2025 03:27:58 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1 | SQL: INSERT INTO event_participants (event_id, user_id, status) VALUES (?, ?, ?) in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/api/join-event.php(39): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[14-May-2025 03:33:00 Europe/Paris] Database query failed: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+[14-May-2025 03:33:00 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1 | SQL: INSERT INTO event_participants (event_id, user_id, status) VALUES (?, ?, ?) in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/api/join-event.php(39): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[14-May-2025 03:33:13 Europe/Paris] Database query failed: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+[14-May-2025 03:33:13 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1 | SQL: INSERT INTO event_participants (event_id, user_id, status) VALUES (?, ?, ?) in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/api/join-event.php(39): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[14-May-2025 03:33:23 Europe/Paris] Database query failed: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+[14-May-2025 03:33:23 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1 | SQL: INSERT INTO event_participants (event_id, user_id, status) VALUES (?, ?, ?) in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/api/join-event.php(39): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[14-May-2025 03:39:02 Europe/Paris] Database query failed: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+[14-May-2025 03:39:02 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1 | SQL: INSERT INTO event_participants (event_id, user_id, status) VALUES (?, ?, ?) in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/api/join-event.php(39): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[14-May-2025 03:39:04 Europe/Paris] Database query failed: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+[14-May-2025 03:39:04 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1 | SQL: INSERT INTO event_participants (event_id, user_id, status) VALUES (?, ?, ?) in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/api/join-event.php(39): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[14-May-2025 03:58:58 Europe/Paris] Database query failed: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+[14-May-2025 03:58:58 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database error occurred: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1 | SQL: INSERT INTO event_participants (event_id, user_id, status) VALUES (?, ?, ?) in /home/sh0z3n/SportMatchy/includes/database.php:40
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/api/join-event.php(37): Database->query()
+#1 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40

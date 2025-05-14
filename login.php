@@ -25,20 +25,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($email) || empty($password)) {
         $error = 'Veuillez remplir tous les champs.';
     } else {
-        $db = Database::getInstance();
-        $user = $db->query("SELECT * FROM users WHERE email = ?", [$email])->fetch();
+        try {
+            $db = Database::getInstance();
+            $user = $db->query("SELECT * FROM users WHERE email = ?", [$email])->fetch();
 
-        if ($user && password_verify($password, $user['password_hash'])) {
-            // Login successful
-            Session::login($user['id'], $user['username'], $user['email'], $remember);
-            
-            // Redirect to intended page or home
-            $redirect = $_SESSION['redirect_after_login'] ?? 'index.php';
-            unset($_SESSION['redirect_after_login']);
-            header("Location: $redirect");
-            exit;
-        } else {
-            $error = 'Email ou mot de passe incorrect.';
+            if ($user && password_verify($password, $user['password'])) {
+                // Check if user is active
+                if ($user['status'] !== 'active') {
+                    $error = 'Votre compte est désactivé. Veuillez contacter l\'administrateur.';
+                } else {
+                    // Update last login
+                    $db->query(
+                        "UPDATE users SET last_login = NOW() WHERE id = ?",
+                        [$user['id']]
+                    );
+
+                    // Login successful
+                    Session::login($user['id'], $user['username'], $user['email'], $remember);
+                    
+                    // Redirect to intended page or home
+                    $redirect = Session::get('redirect_after_login') ?? 'index.php';
+                    Session::remove('redirect_after_login');
+                    header("Location: $redirect");
+                    exit;
+                }
+            } else {
+                // Log failed login attempt
+                $db->query(
+                    "INSERT INTO login_attempts (email, ip_address) VALUES (?, ?)",
+                    [$email, $_SERVER['REMOTE_ADDR']]
+                );
+                $error = 'Email ou mot de passe incorrect.';
+            }
+        } catch (Exception $e) {
+            error_log($e->getMessage());
+            $error = 'Une erreur est survenue. Veuillez réessayer plus tard.';
         }
     }
 }
@@ -67,6 +88,12 @@ $csrf_token = Session::generateCSRFToken();
                     <div class="alert alert-error">
                         <i class="fas fa-exclamation-circle"></i>
                         <?php echo htmlspecialchars($error); ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($flash = Session::getFlash()): ?>
+                    <div class="alert alert-<?php echo $flash['type']; ?>">
+                        <?php echo htmlspecialchars($flash['message']); ?>
                     </div>
                 <?php endif; ?>
 

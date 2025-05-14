@@ -3,20 +3,44 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require_once __DIR__ . '/includes/database.php';
+require_once __DIR__ . '/includes/session.php';
+
+Session::start();
+if (!Session::isLoggedIn()) {
+    header('Location: login.php');
+    exit;
+}
+
 $error = '';
+$db = Database::getInstance();
+
+// Get available sports
+$sports = $db->query('SELECT id, name FROM sports ORDER BY name')->fetchAll();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = trim($_POST['title'] ?? '');
-    $sport = trim($_POST['sport'] ?? '');
-    $event_date = trim($_POST['event_date'] ?? '');
+    $sport_id = (int)($_POST['sport_id'] ?? 0);
+    $start_time = trim($_POST['start_time'] ?? '');
+    $end_time = trim($_POST['end_time'] ?? '');
     $location = trim($_POST['location'] ?? '');
     $description = trim($_POST['description'] ?? '');
-    if (!$title || !$sport || !$event_date || !$location) {
+    $max_participants = (int)($_POST['max_participants'] ?? 0);
+
+    if (!$title || !$sport_id || !$start_time || !$end_time || !$location) {
         $error = "Veuillez remplir tous les champs obligatoires.";
     } else {
-        $db = Database::getInstance();
-        $db->query('INSERT INTO events (title, sport, event_date, location, description) VALUES (?, ?, ?, ?, ?)', [$title, $sport, $event_date, $location, $description]);
-        header('Location: events.php');
-        exit;
+        try {
+            $db->query(
+                'INSERT INTO events (title, sport_id, creator_id, start_time, end_time, location, description, max_participants) 
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+                [$title, $sport_id, Session::getUserId(), $start_time, $end_time, $location, $description, $max_participants]
+            );
+            header('Location: events.php');
+            exit;
+        } catch (Exception $e) {
+            $error = "Une erreur est survenue lors de la création de l'événement.";
+            error_log($e->getMessage());
+        }
     }
 }
 ?>
@@ -43,25 +67,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="text" id="title" name="title" required>
             </div>
             <div class="form-group">
-                <label for="sport">Sport *</label>
-                <input type="text" id="sport" name="sport" required>
+                <label for="sport_id">Sport *</label>
+                <select id="sport_id" name="sport_id" required>
+                    <option value="">Sélectionner un sport</option>
+                    <?php foreach ($sports as $sport): ?>
+                        <option value="<?= $sport['id'] ?>"><?= htmlspecialchars($sport['name']) ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group">
-                <label for="event_date">Date et heure *</label>
-                <input type="datetime-local" id="event_date" name="event_date" required>
+                <label for="start_time">Date et heure de début *</label>
+                <input type="datetime-local" id="start_time" name="start_time" required>
             </div>
+            <div class="form-group">
+                <label for="end_time">Date et heure de fin *</label>
+                <input type="datetime-local" id="end_time" name="end_time" required>
+            </div>
+        </div>
+        <div class="form-row">
             <div class="form-group">
                 <label for="location">Lieu *</label>
                 <input type="text" id="location" name="location" required>
             </div>
+            <div class="form-group">
+                <label for="max_participants">Nombre maximum de participants</label>
+                <input type="number" id="max_participants" name="max_participants" min="2" value="10">
+            </div>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea id="description" name="description"></textarea>
+            <textarea id="description" name="description" rows="4"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Créer</button>
+        <button type="submit" class="btn btn-primary">Créer l'événement</button>
     </form>
 </section>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

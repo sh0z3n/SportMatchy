@@ -6,10 +6,8 @@ require_once '../includes/auth.php';
 
 header('Content-Type: application/json');
 
-// Start session
 Session::start();
 
-// Check if user is logged in for protected actions
 $protectedActions = ['create', 'join', 'leave', 'delete', 'update'];
 if (in_array($_GET['action'] ?? '', $protectedActions) && !Session::isLoggedIn()) {
     http_response_code(401);
@@ -23,12 +21,10 @@ $action = $_GET['action'] ?? '';
 switch ($action) {
     case 'list':
         try {
-            // Get filter parameters
             $sportId = $_GET['sport_id'] ?? '';
             $date = $_GET['date'] ?? '';
             $search = $_GET['search'] ?? '';
             
-            // Build query
             $query = "SELECT e.*, s.name as sport_name, u.username as creator_name,
                              (SELECT COUNT(*) FROM event_participants WHERE event_id = e.id) as participant_count
                       FROM events e 
@@ -66,21 +62,16 @@ switch ($action) {
     case 'create':
         try {
             $data = json_decode(file_get_contents('php://input'), true);
-            
-            // Validate required fields
             $required = ['title', 'description', 'sport_id', 'location', 'event_date', 'max_participants'];
             foreach ($required as $field) {
                 if (empty($data[$field])) {
                     throw new Exception("Le champ '$field' est requis");
                 }
             }
-            
-            // Validate event date
             if (strtotime($data['event_date']) <= time()) {
                 throw new Exception("La date de l'événement doit être dans le futur");
             }
             
-            // Create event
             $eventId = $db->insert('events', [
                 'title' => $data['title'],
                 'description' => $data['description'],
@@ -91,7 +82,6 @@ switch ($action) {
                 'max_participants' => $data['max_participants']
             ]);
             
-            // Add creator as first participant
             $db->insert('event_participants', [
                 'event_id' => $eventId,
                 'user_id' => Session::getUserId(),
@@ -109,8 +99,6 @@ switch ($action) {
         try {
             $data = json_decode(file_get_contents('php://input'), true);
             $eventId = $data['event_id'] ?? 0;
-            
-            // Check if event exists and is not full
             $event = $db->query(
                 "SELECT * FROM events WHERE id = ? AND event_date > NOW()",
                 [$eventId]
@@ -119,8 +107,6 @@ switch ($action) {
             if (!$event) {
                 throw new Exception('Événement non trouvé ou terminé');
             }
-            
-            // Check if user is already a participant
             $isParticipant = $db->query(
                 "SELECT COUNT(*) FROM event_participants WHERE event_id = ? AND user_id = ?",
                 [$eventId, Session::getUserId()]
@@ -129,8 +115,6 @@ switch ($action) {
             if ($isParticipant) {
                 throw new Exception('Vous participez déjà à cet événement');
             }
-            
-            // Check if event is full
             $participantCount = $db->query(
                 "SELECT COUNT(*) FROM event_participants WHERE event_id = ?",
                 [$eventId]
@@ -140,7 +124,6 @@ switch ($action) {
                 throw new Exception("L'événement est complet");
             }
             
-            // Add participant
             $db->insert('event_participants', [
                 'event_id' => $eventId,
                 'user_id' => Session::getUserId(),
@@ -159,7 +142,6 @@ switch ($action) {
             $data = json_decode(file_get_contents('php://input'), true);
             $eventId = $data['event_id'] ?? 0;
             
-            // Check if user is a participant
             $isParticipant = $db->query(
                 "SELECT COUNT(*) FROM event_participants WHERE event_id = ? AND user_id = ?",
                 [$eventId, Session::getUserId()]
@@ -169,7 +151,6 @@ switch ($action) {
                 throw new Exception('Vous ne participez pas à cet événement');
             }
             
-            // Remove participant
             $db->query(
                 "DELETE FROM event_participants WHERE event_id = ? AND user_id = ?",
                 [$eventId, Session::getUserId()]
@@ -187,7 +168,6 @@ switch ($action) {
             $data = json_decode(file_get_contents('php://input'), true);
             $eventId = $data['event_id'] ?? 0;
             
-            // Check if user is the creator
             $event = $db->query(
                 "SELECT * FROM events WHERE id = ?",
                 [$eventId]
@@ -197,7 +177,6 @@ switch ($action) {
                 throw new Exception('Non autorisé');
             }
             
-            // Delete event and participants
             $db->query("DELETE FROM event_participants WHERE event_id = ?", [$eventId]);
             $db->query("DELETE FROM events WHERE id = ?", [$eventId]);
             
@@ -213,7 +192,6 @@ switch ($action) {
             $data = json_decode(file_get_contents('php://input'), true);
             $eventId = $data['event_id'] ?? 0;
             
-            // Check if user is the creator
             $event = $db->query(
                 "SELECT * FROM events WHERE id = ?",
                 [$eventId]
@@ -222,8 +200,6 @@ switch ($action) {
             if (!$event || $event['creator_id'] !== Session::getUserId()) {
                 throw new Exception('Non autorisé');
             }
-            
-            // Update allowed fields
             $allowedFields = ['title', 'description', 'location', 'event_date', 'max_participants'];
             $updates = array_intersect_key($data, array_flip($allowedFields));
             

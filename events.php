@@ -19,9 +19,11 @@ $events = $db->query('SELECT e.*, s.name as sport_name FROM events e LEFT JOIN s
 <body>
 <?php require_once __DIR__ . '/includes/header.php'; ?>
 <section class="events-section container">
-    <div class="events-header">
-        <h1>Événements sportifs</h1>
-        <a href="create-event.php" class="btn btn-primary">Créer un événement</a>
+    <div class="events-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h1>Événements</h1>
+        <a href="map.php" class="btn btn-outline" style="margin-left: auto;">
+            <i class="fas fa-map-marked-alt"></i> Voir la carte des événements
+        </a>
     </div>
     <div class="events-grid">
         <?php if (empty($events)): ?>
@@ -45,12 +47,48 @@ $events = $db->query('SELECT e.*, s.name as sport_name FROM events e LEFT JOIN s
                     </div>
                     <div class="event-actions">
                         <a href="event.php?id=<?= $event['id'] ?>" class="btn btn-outline">Voir</a>
+                        <a href="chat.php?event_id=<?= $event['id'] ?>" class="btn btn-secondary" style="margin-left:0.5rem;">Chat</a>
+                        <form class="participate-form" method="post" action="api/join-event.php" style="display:inline;margin-left:0.5rem;">
+                            <input type="hidden" name="event_id" value="<?= $event['id'] ?>">
+                            <button type="submit" class="btn btn-success">Participer</button>
+                        </form>
                     </div>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
 </section>
+<script>
+document.querySelectorAll('.participate-form').forEach(form => {
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = '...';
+        const formData = new FormData(this);
+        fetch('api/join-event.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(r => r.json())
+        .then(data => {
+            if (data.success) {
+                btn.className = 'btn btn-success';
+                btn.textContent = 'Participation confirmée !';
+            } else {
+                btn.disabled = false;
+                btn.textContent = 'Participer';
+                alert(data.error || 'Erreur lors de la participation.');
+            }
+        })
+        .catch(() => {
+            btn.disabled = false;
+            btn.textContent = 'Participer';
+            alert('Erreur réseau.');
+        });
+    };
+});
+</script>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
 </body>
 </html> 

@@ -1,7 +1,44 @@
 <?php
 require_once 'includes/config.php';
 require_once 'includes/session.php';
+require_once 'includes/database.php';
+
 Session::start();
+$db = Database::getInstance();
+
+// Get upcoming events
+$upcomingEvents = $db->query(
+    "SELECT e.*, s.name as sport_name, u.username as creator_name, 
+     (SELECT COUNT(*) FROM event_participants WHERE event_id = e.id AND status = 'confirmed') as participant_count
+     FROM events e 
+     JOIN sports s ON e.sport_id = s.id 
+     JOIN users u ON e.creator_id = u.id 
+     WHERE e.start_time > NOW() 
+     ORDER BY e.start_time ASC 
+     LIMIT 3"
+)->fetchAll();
+
+// Get popular sports
+$popularSports = $db->query(
+    "SELECT s.*, COUNT(DISTINCT e.id) as event_count 
+     FROM sports s 
+     LEFT JOIN events e ON s.id = e.sport_id 
+     GROUP BY s.id 
+     ORDER BY event_count DESC 
+     LIMIT 4"
+)->fetchAll();
+
+// Get user stats if logged in
+$userStats = null;
+if (Session::isLoggedIn()) {
+    $userStats = $db->query(
+        "SELECT 
+            (SELECT COUNT(*) FROM events WHERE creator_id = ?) as created_events,
+            (SELECT COUNT(*) FROM event_participants WHERE user_id = ? AND status = 'confirmed') as joined_events,
+            (SELECT COUNT(*) FROM chat_groups WHERE created_by = ?) as created_groups",
+        [Session::getUserId(), Session::getUserId(), Session::getUserId()]
+    )->fetch();
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -87,6 +124,7 @@ Session::start();
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
+    
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -99,7 +137,11 @@ Session::start();
                         Voir les événements
                     </a>
                     <?php if (Session::isLoggedIn()): ?>
-                        <a href="profile.php" class="btn btn-secondary">
+                        <a href="create-event.php" class="btn btn-secondary">
+                            <i class="fas fa-plus"></i>
+                            Créer un événement
+                        </a>
+                        <a href="profile.php" class="btn btn-outline">
                             <i class="fas fa-user"></i>
                             Mon profil
                         </a>
@@ -108,19 +150,101 @@ Session::start();
                             <i class="fas fa-user-plus"></i>
                             S'inscrire
                         </a>
+                        <a href="login.php" class="btn btn-outline">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Se connecter
+                        </a>
                     <?php endif; ?>
                 </div>
             </div>
         </div>
         <div class="scroll-down"><i class="fas fa-chevron-down"></i></div>
     </section>
+
+    <?php if (Session::isLoggedIn() && $userStats): ?>
+    <section class="user-stats-section">
+        <div class="container">
+            <h2>Mes statistiques</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-calendar-plus"></i>
+                    <h3>Événements créés</h3>
+                    <div class="stat-number"><?php echo $userStats['created_events']; ?></div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Événements rejoints</h3>
+                    <div class="stat-number"><?php echo $userStats['joined_events']; ?></div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Groupes créés</h3>
+                    <div class="stat-number"><?php echo $userStats['created_groups']; ?></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
+
+    <section class="upcoming-events-section">
+        <div class="container">
+            <h2>Prochains événements</h2>
+            <div class="events-grid">
+                <?php foreach ($upcomingEvents as $event): ?>
+                    <div class="event-card">
+                        <div class="event-header">
+                            <h3><?php echo htmlspecialchars($event['title']); ?></h3>
+                            <span class="sport-badge"><?php echo htmlspecialchars($event['sport_name']); ?></span>
+                        </div>
+                        <div class="event-details">
+                            <p><i class="fas fa-calendar"></i> <?php echo date('d/m/Y H:i', strtotime($event['start_time'])); ?></p>
+                            <p><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($event['location']); ?></p>
+                            <p><i class="fas fa-users"></i> <?php echo $event['participant_count']; ?> participants</p>
+                        </div>
+                        <div class="event-actions">
+                            <a href="event.php?id=<?php echo $event['id']; ?>" class="btn btn-primary">Voir détails</a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <div class="text-center mt-4">
+                <a href="events.php" class="btn btn-secondary">Voir tous les événements</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-sports-section">
+        <div class="container">
+            <h2>Sports populaires</h2>
+            <div class="sports-grid">
+                <?php foreach ($popularSports as $sport): ?>
+                    <div class="sport-card">
+                        <i class="fas fa-<?php echo strtolower($sport['name']); ?>"></i>
+                        <h3><?php echo htmlspecialchars($sport['name']); ?></h3>
+                        <p><?php echo htmlspecialchars($sport['description']); ?></p>
+                        <div class="sport-stats">
+                            <span><?php echo $sport['event_count']; ?> événements</span>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-section">
         <div class="container">
             <h2>Rejoignez la communauté SportMatchy</h2>
             <p>Participez à des événements sportifs, discutez en temps réel, et faites de nouvelles rencontres autour de votre passion !</p>
-            <a href="register.php" class="btn btn-primary">Créer un compte</a>
+            <?php if (!Session::isLoggedIn()): ?>
+                <a href="register.php" class="btn btn-primary">Créer un compte</a>
+            <?php else: ?>
+                <a href="create-event.php" class="btn btn-primary">Créer un événement</a>
+            <?php endif; ?>
         </div>
     </section>
+
     <?php include 'includes/footer.php'; ?>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chatbot.js"></script>
 </body>
 </html> 

@@ -14,42 +14,31 @@ require_once 'includes/header.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-<main class="about-section container">
-    <h1>À propos de SportMatchy</h1>
-    <section class="about-content">
-        <div class="about-text">
-            <h2>Notre mission</h2>
-            <p>SportMatchy est une plateforme dédiée à la création, la gestion et la participation à des événements sportifs. Notre objectif est de rassembler les passionnés de sport, faciliter l'organisation de matchs et d'événements, et offrir un espace de discussion en temps réel.</p>
-            <h2>Fonctionnalités principales</h2>
-            <ul>
-                <li><i class="fas fa-calendar-alt"></i> Création et gestion d'événements sportifs</li>
-                <li><i class="fas fa-users"></i> Rejoindre des groupes et des matchs</li>
-                <li><i class="fas fa-comments"></i> Chat en temps réel avec WebSocket</li>
-                <li><i class="fas fa-map-marker-alt"></i> Localisation des événements sur carte</li>
-                <li><i class="fas fa-chart-bar"></i> Statistiques et suivi des performances</li>
-            </ul>
-        </div>
-        <div class="about-image">
-            <img src="assets/images/about-sport.jpg" alt="SportMatchy" style="width:100%;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+<main class="container" style="max-width:900px;">
+    <section class="about-hero" style="display:flex;align-items:center;gap:2rem;margin-bottom:2.5rem;background:var(--card-bg);border-radius:1.2rem;box-shadow:0 2px 16px rgba(67,176,71,0.10);padding:2rem 1.5rem;flex-wrap:wrap;">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Team" style="border-radius:1rem;width:320px;max-width:100%;box-shadow:0 2px 16px rgba(67,176,71,0.12);flex:1 1 220px;">
+        <div style="flex:2 1 320px;min-width:220px;">
+            <h1 style="margin-top:0;">À propos de SportMatchy</h1>
+            <p style="font-size:1.15em;line-height:1.7;">SportMatchy est votre plateforme de rencontre sportive. Trouvez des partenaires, rejoignez des événements et partagez votre passion pour le sport.</p>
         </div>
     </section>
-    <section class="team-section">
-        <h2>Notre équipe</h2>
-        <div class="team-grid">
-            <div class="team-member">
-                <img src="assets/images/team1.jpg" alt="Membre 1">
-                <h3>Alexandre Dupont</h3>
-                <p>Fondateur & Développeur</p>
+    <section class="about-mission" style="margin-bottom:2.5rem;background:var(--card-bg);border-radius:1.2rem;box-shadow:0 2px 16px rgba(67,176,71,0.10);padding:2rem 1.5rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Mission" style="border-radius:1rem;width:220px;max-width:100%;box-shadow:0 2px 16px rgba(67,176,71,0.12);flex:1 1 120px;">
+        <div style="flex:2 1 320px;min-width:220px;">
+            <h2 style="margin-top:0;">Notre mission</h2>
+            <p style="font-size:1.1em;line-height:1.7;">Nous croyons que le sport rapproche les gens. Notre mission est de faciliter la création de communautés sportives locales et de rendre la pratique sportive accessible à tous.</p>
+        </div>
+    </section>
+    <section class="about-team" style="background:var(--card-bg);border-radius:1.2rem;box-shadow:0 2px 16px rgba(67,176,71,0.10);padding:2rem 1.5rem;">
+        <h2 style="margin-top:0;">L'équipe</h2>
+        <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
+            <div style="text-align:center;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD0ljYyvoMTTemEAMpfHwc-DMlDsFtft9fbA&s" alt="Mokhtar" style="border-radius:50%;width:120px;height:120px;object-fit:cover;box-shadow:0 2px 8px rgba(67,176,71,0.12);">
+                <div>Mokhtar</div>
             </div>
-            <div class="team-member">
-                <img src="assets/images/team2.jpg" alt="Membre 2">
-                <h3>Marie Lefevre</h3>
-                <p>UI/UX Designer</p>
-            </div>
-            <div class="team-member">
-                <img src="assets/images/team3.jpg" alt="Membre 3">
-                <h3>Yassine Benali</h3>
-                <p>Responsable Communauté</p>
+            <div style="text-align:center;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxFFJUsl9Qt4mknNSiPhEmVsHYulLtxV9zOQ&s" alt="Abdelkrim" style="border-radius:50%;width:120px;height:120px;object-fit:cover;box-shadow:0 2px 8px rgba(67,176,71,0.12);">
+                <div>Abdelkrim</div>
             </div>
         </div>
     </section>
