@@ -27,39 +27,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         try {
             $db = Database::getInstance();
-            $user = $db->query("SELECT * FROM users WHERE email = ?", [$email])->fetch();
+            $user = $db->query("SELECT id, username, email, password_hash, status FROM users WHERE email = ?", [$email])->fetch();
 
-            if ($user && password_verify($password, $user['password'])) {
-                // Check if user is active
+            if ($user && password_verify($password, $user['password_hash'])) {
+                // Check if account is active
                 if ($user['status'] !== 'active') {
-                    $error = 'Votre compte est désactivé. Veuillez contacter l\'administrateur.';
+                    $error = "Votre compte n'est pas actif. Veuillez vérifier votre email pour les instructions d'activation.";
                 } else {
-                    // Update last login
-                    $db->query(
-                        "UPDATE users SET last_login = NOW() WHERE id = ?",
-                        [$user['id']]
-                    );
-
-                    // Login successful
-                    Session::login($user['id'], $user['username'], $user['email'], $remember);
+                    // Set session variables
+                    $_SESSION['user_id'] = $user['id'];
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['email'] = $user['email'];
                     
-                    // Redirect to intended page or home
-                    $redirect = Session::get('redirect_after_login') ?? 'index.php';
-                    Session::remove('redirect_after_login');
-                    header("Location: $redirect");
-                    exit;
+                    // Update last login time
+                    $db->query("UPDATE users SET last_login = NOW() WHERE id = ?", [$user['id']]);
+                    
+                    // Redirect to index page
+                    header("Location: index.php");
+                    exit();
                 }
             } else {
-                // Log failed login attempt
-                $db->query(
-                    "INSERT INTO login_attempts (email, ip_address) VALUES (?, ?)",
-                    [$email, $_SERVER['REMOTE_ADDR']]
-                );
-                $error = 'Email ou mot de passe incorrect.';
+                $error = "Email ou mot de passe incorrect";
             }
         } catch (Exception $e) {
-            error_log($e->getMessage());
-            $error = 'Une erreur est survenue. Veuillez réessayer plus tard.';
+            error_log("Login error: " . $e->getMessage());
+            $error = "Une erreur est survenue. Veuillez réessayer plus tard.";
         }
     }
 }

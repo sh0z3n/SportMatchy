@@ -2,16 +2,13 @@
 require_once '../includes/config.php';
 require_once '../includes/database.php';
 
-// Set JSON response header
 header('Content-Type: application/json');
 
 try {
-    // Validate request method
     if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
         throw new Exception('Méthode non autorisée');
     }
 
-    // Get and validate username
     $username = $_GET['username'] ?? '';
     
     if (empty($username)) {
@@ -26,7 +23,6 @@ try {
         throw new Exception('Le nom d\'utilisateur ne peut contenir que des lettres, chiffres, tirets et underscores');
     }
 
-    // Check availability
     $db = Database::getInstance();
     $exists = $db->exists('users', 'username = ?', [$username]);
 

@@ -1,16 +1,13 @@
 <?php
-// Database configuration
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'sportmatchy');
 define('DB_USER', 'sportmatchy');
 define('DB_PASS', 'sportmatchy123');
 
-// Application configuration
 define('APP_NAME', 'SportMatchy');
 define('APP_URL', 'http://localhost:8000');
 define('APP_EMAIL', 'contact@sportmatchy.com');
 
-// Session configuration
 define('SESSION_LIFETIME', 3600); // 1 hour
 define('REMEMBER_LIFETIME', 2592000); // 30 days
 

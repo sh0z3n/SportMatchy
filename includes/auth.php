@@ -13,7 +13,6 @@ class Auth {
     }
 
     public function register($username, $email, $password) {
-        // Validate input
         if (empty($username) || empty($email) || empty($password)) {
             throw new Exception("Tous les champs sont requis.");
         }
@@ -30,7 +29,6 @@ class Auth {
             throw new Exception("Le mot de passe doit contenir au moins 8 caractères.");
         }
 
-        // Check if username or email already exists
         $existingUser = $this->db->query(
             "SELECT * FROM users WHERE username = ? OR email = ?",
             [$username, $email]
@@ -44,10 +42,8 @@ class Auth {
             }
         }
 
-        // Hash password
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-        // Insert new user
         $userId = $this->db->insert('users', [
             'username' => $username,
             'email' => $email,
@@ -78,10 +74,8 @@ class Auth {
             throw new Exception("Email ou mot de passe incorrect.");
         }
 
-        // Log the user in
         Session::login($user['id'], $user['username'], $user['email']);
 
-        // Handle remember me
         if ($remember) {
             $token = bin2hex(random_bytes(32));
             $expires = date('Y-m-d H:i:s', strtotime('+30 days'));
@@ -101,7 +95,6 @@ class Auth {
     public function logout() {
         if (Session::isLoggedIn()) {
             $userId = Session::getUserId();
-            // Clear remember token
             $this->db->delete('remember_tokens', 'user_id = ?', [$userId]);
             Session::clearRememberToken();
         }
@@ -132,7 +125,6 @@ class Auth {
             'expires_at' => $expires
         ]);
 
-        // Send reset email
         $resetLink = APP_URL . "/reset-password.php?token=" . $token;
         $to = $user['email'];
         $subject = "Réinitialisation de votre mot de passe - " . APP_NAME;
@@ -176,14 +168,12 @@ class Auth {
         $reset = $reset[0];
         $passwordHash = password_hash($newPassword, PASSWORD_DEFAULT);
 
-        // Update password
         $this->db->update('users', 
             ['password' => $passwordHash],
             'id = ?',
             [$reset['user_id']]
         );
 
-        // Mark token as used
         $this->db->update('password_resets',
             ['used' => 1],
             'id = ?',

@@ -6,7 +6,6 @@ require_once 'includes/database.php';
 Session::start();
 $db = Database::getInstance();
 
-// Get upcoming events
 $upcomingEvents = $db->query(
     "SELECT e.*, s.name as sport_name, u.username as creator_name, 
      (SELECT COUNT(*) FROM event_participants WHERE event_id = e.id AND status = 'confirmed') as participant_count
@@ -18,7 +17,6 @@ $upcomingEvents = $db->query(
      LIMIT 3"
 )->fetchAll();
 
-// Get popular sports
 $popularSports = $db->query(
     "SELECT s.*, COUNT(DISTINCT e.id) as event_count 
      FROM sports s 
@@ -28,7 +26,6 @@ $popularSports = $db->query(
      LIMIT 4"
 )->fetchAll();
 
-// Get user stats if logged in
 $userStats = null;
 if (Session::isLoggedIn()) {
     $userStats = $db->query(
@@ -212,7 +209,7 @@ if (Session::isLoggedIn()) {
             </div>
         </div>
     </section>
-
+<!-- // quoi je dois pour le popular sports ? -->
     <section class="popular-sports-section">
         <div class="container">
             <h2>Sports populaires</h2>

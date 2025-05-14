@@ -3,25 +3,19 @@ require_once '../includes/config.php';
 require_once '../includes/database.php';
 require_once '../includes/session.php';
 
-// Start session
 Session::start();
 
-// Set headers for JSON response
 header('Content-Type: application/json');
 
-// Check if user is logged in
 if (!Session::isLoggedIn()) {
     http_response_code(401);
     echo json_encode(['error' => 'Unauthorized']);
     exit;
 }
 
-// Get request parameters
 $sport = isset($_GET['sport']) ? $_GET['sport'] : 'all';
 $league = isset($_GET['league']) ? $_GET['league'] : 'all';
 
-// In a real application, you would fetch this data from a sports API
-// For now, we'll use simulated data
 $liveMatches = [
     [
         'id' => 1,
@@ -55,7 +49,6 @@ $liveMatches = [
     ]
 ];
 
-// Filter matches based on parameters
 if ($sport !== 'all') {
     $liveMatches = array_filter($liveMatches, function($match) use ($sport) {
         return strtolower($match['sport']) === strtolower($sport);
@@ -68,7 +61,6 @@ if ($league !== 'all') {
     });
 }
 
-// Add some randomness to simulate live updates
 foreach ($liveMatches as &$match) {
     if ($match['sport'] === 'Football') {
         $match['minute'] = (int)$match['minute'] + rand(1, 3);
@@ -84,7 +76,6 @@ foreach ($liveMatches as &$match) {
     }
 }
 
-// Return the filtered matches
 echo json_encode([
     'success' => true,
     'matches' => array_values($liveMatches)

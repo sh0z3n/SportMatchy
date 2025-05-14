@@ -32,7 +32,6 @@
     </div>
 </footer>
 
-<!-- Scripts -->
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 <script src="assets/js/main.js"></script>
 </body>

@@ -48,6 +48,14 @@ graph TD;
 4. Lancer le serveur PHP et le serveur WebSocket
 5. Accéder à `index.php` dans le navigateur
 
+* les commendes a lancer : -> 
+  - ```sudo systemctl start mariadb```
+  - ```php -S localhost:8000```
+  - ```php websockets/chat_server.php```
+  -> verifier les tableaux de notre base de donne  : ```mysql -u sportmatchy -p'sportmatchy123' -e "SHOW DATABASES;" | cat```
+
+nb : fallait ajouter le API key google maps pour afficher le map 
+
 ## Auteurs
 - Mokhtar (sh0z3n)
 - Abdelkrim

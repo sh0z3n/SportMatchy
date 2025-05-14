@@ -153,8 +153,8 @@ $csrfToken = Session::generateCSRFToken();
                     </form>
                 </div>
                 <div class="profile-info">
-                    <h1><?php echo htmlspecialchars($user['username'] ?? ''); ?></h1>
-                    <p class="profile-email"><?php echo htmlspecialchars($user['email'] ?? ''); ?></p>
+                    <h1><?php echo htmlspecialchars($user['username']); ?></h1>
+                    <p class="profile-email"><?php echo htmlspecialchars($user['email']); ?></p>
                     <p class="profile-bio"><?php echo htmlspecialchars($user['bio'] ?? 'Aucune biographie'); ?></p>
                 </div>
             </div>
@@ -176,17 +176,17 @@ $csrfToken = Session::generateCSRFToken();
                 
                 <div class="form-group">
                     <label for="username">Nom d'utilisateur</label>
-                    <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($user['username'] ?? ''); ?>" required>
+                    <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($user['username']); ?>" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email'] ?? ''); ?>" required>
+                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
                 </div>
 
                 <div class="form-group">
                     <label for="bio">Biographie</label>
-                    <textarea id="bio" name="bio" rows="4"><?php echo htmlspecialchars($user['bio'] ?? ''); ?></textarea>
+                    <textarea id="bio" name="bio" rows="4"><?php echo htmlspecialchars($user['bio']); ?></textarea>
                 </div>
 
                 <div class="form-group">
@@ -205,15 +205,15 @@ $csrfToken = Session::generateCSRFToken();
                                 <div class="event-content">
                                     <div class="event-header">
                                         <i class="fas <?php echo $event['sport_icon']; ?>"></i>
-                                        <h3 class="event-title"><?php echo htmlspecialchars($event['title'] ?? ''); ?></h3>
+                                        <h3 class="event-title"><?php echo htmlspecialchars($event['title']); ?></h3>
                                     </div>
                                     <div class="event-meta">
-                                        <span><i class="fas fa-calendar"></i> <?php echo date('d/m/Y H:i', strtotime($event['start_time'] ?? '')); ?></span>
-                                        <span><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($event['location'] ?? ''); ?></span>
+                                        <span><i class="fas fa-calendar"></i> <?php echo date('d/m/Y H:i', strtotime($event['start_time'])); ?></span>
+                                        <span><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($event['location']); ?></span>
                                     </div>
-                                    <p class="event-description"><?php echo htmlspecialchars($event['description'] ?? ''); ?></p>
+                                    <p class="event-description"><?php echo htmlspecialchars($event['description']); ?></p>
                                     <div class="event-footer">
-                                        <span class="event-sport"><?php echo htmlspecialchars($event['sport_name'] ?? ''); ?></span>
+                                        <span class="event-sport"><?php echo htmlspecialchars($event['sport_name']); ?></span>
                                         <a href="event.php?id=<?php echo $event['id']; ?>" class="btn btn-secondary">Voir détails</a>
                                     </div>
                                 </div>
@@ -232,16 +232,16 @@ $csrfToken = Session::generateCSRFToken();
                                 <div class="event-content">
                                     <div class="event-header">
                                         <i class="fas <?php echo $event['sport_icon']; ?>"></i>
-                                        <h3 class="event-title"><?php echo htmlspecialchars($event['title'] ?? ''); ?></h3>
+                                        <h3 class="event-title"><?php echo htmlspecialchars($event['title']); ?></h3>
                                     </div>
                                     <div class="event-meta">
-                                        <span><i class="fas fa-calendar"></i> <?php echo date('d/m/Y H:i', strtotime($event['start_time'] ?? '')); ?></span>
-                                        <span><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($event['location'] ?? ''); ?></span>
-                                        <span class="status-badge <?php echo $event['status'] ?? ''; ?>"><?php echo ucfirst($event['status'] ?? ''); ?></span>
+                                        <span><i class="fas fa-calendar"></i> <?php echo date('d/m/Y H:i', strtotime($event['start_time'])); ?></span>
+                                        <span><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($event['location']); ?></span>
+                                        <span class="status-badge <?php echo $event['status']; ?>"><?php echo ucfirst($event['status']); ?></span>
                                     </div>
-                                    <p class="event-description"><?php echo htmlspecialchars($event['description'] ?? ''); ?></p>
+                                    <p class="event-description"><?php echo htmlspecialchars($event['description']); ?></p>
                                     <div class="event-footer">
-                                        <span class="event-sport"><?php echo htmlspecialchars($event['sport_name'] ?? ''); ?></span>
+                                        <span class="event-sport"><?php echo htmlspecialchars($event['sport_name']); ?></span>
                                         <a href="event.php?id=<?php echo $event['id']; ?>" class="btn btn-secondary">Voir détails</a>
                                     </div>
                                 </div>

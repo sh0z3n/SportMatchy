@@ -680,3 +680,51 @@ Stack trace:
 #0 /home/sh0z3n/SportMatchy/api/join-event.php(37): Database->query()
 #1 {main}
   thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 40
+[14-May-2025 04:42:13 Europe/Paris] PHP Warning:  Undefined array key "password" in /home/sh0z3n/SportMatchy/login.php on line 32
+[14-May-2025 04:42:13 Europe/Paris] PHP Deprecated:  password_verify(): Passing null to parameter #2 ($hash) of type string is deprecated in /home/sh0z3n/SportMatchy/login.php on line 32
+[14-May-2025 04:45:56 Europe/Paris] PHP Warning:  Undefined array key "password" in /home/sh0z3n/SportMatchy/login.php on line 32
+[14-May-2025 04:45:56 Europe/Paris] PHP Deprecated:  password_verify(): Passing null to parameter #2 ($hash) of type string is deprecated in /home/sh0z3n/SportMatchy/login.php on line 32
+[14-May-2025 04:46:44 Europe/Paris] PHP Warning:  Undefined array key "password" in /home/sh0z3n/SportMatchy/login.php on line 32
+[14-May-2025 04:46:44 Europe/Paris] PHP Deprecated:  password_verify(): Passing null to parameter #2 ($hash) of type string is deprecated in /home/sh0z3n/SportMatchy/login.php on line 32
+[14-May-2025 04:53:04 Europe/Paris] PHP Warning:  Undefined array key "status" in /home/sh0z3n/SportMatchy/login.php on line 34
+[14-May-2025 05:11:23 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_login' in 'field list'
+[14-May-2025 05:11:23 Europe/Paris] Database error occurred: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_login' in 'field list' | SQL: UPDATE users SET last_login = NOW() WHERE id = ?
+[14-May-2025 05:12:00 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_login' in 'field list'
+[14-May-2025 05:12:00 Europe/Paris] Database error occurred: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'last_login' in 'field list' | SQL: UPDATE users SET last_login = NOW() WHERE id = ?
+[14-May-2025 12:56:59 Europe/Paris] Database connection failed: SQLSTATE[HY000] [2002] No such file or directory
+[14-May-2025 12:56:59 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/index.php(7): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[14-May-2025 12:57:04 Europe/Paris] Database connection failed: SQLSTATE[HY000] [2002] No such file or directory
+[14-May-2025 12:57:04 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/index.php(7): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[14-May-2025 13:07:55 Europe/Paris] Database connection failed: SQLSTATE[HY000] [2002] No such file or directory
+[14-May-2025 13:07:55 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/index.php(7): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[14-May-2025 13:07:59 Europe/Paris] Database connection failed: SQLSTATE[HY000] [2002] No such file or directory
+[14-May-2025 13:07:59 Europe/Paris] PHP Fatal error:  Uncaught Exception: Database connection failed. Please try again later. in /home/sh0z3n/SportMatchy/includes/database.php:22
+Stack trace:
+#0 /home/sh0z3n/SportMatchy/includes/database.php(28): Database->__construct()
+#1 /home/sh0z3n/SportMatchy/index.php(7): Database::getInstance()
+#2 {main}
+  thrown in /home/sh0z3n/SportMatchy/includes/database.php on line 22
+[14-May-2025 13:13:48 Europe/Paris] PHP Warning:  Undefined array key "status" in /home/sh0z3n/SportMatchy/login.php on line 34
+[14-May-2025 13:16:22 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to undefined method Database::prepare() in /home/sh0z3n/SportMatchy/login.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/sh0z3n/SportMatchy/login.php on line 30
+[14-May-2025 13:18:23 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'
+[14-May-2025 13:18:23 Europe/Paris] Database error occurred: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list' | SQL: SELECT id, username, email, password_hash, status FROM users WHERE email = ?
+[14-May-2025 13:18:29 Europe/Paris] Database query failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list'
+[14-May-2025 13:18:29 Europe/Paris] Database error occurred: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'field list' | SQL: SELECT id, username, email, password_hash, status FROM users WHERE email = ?

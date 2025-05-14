@@ -15,7 +15,6 @@ if (!$name) {
     exit;
 }
 $db = Database::getInstance();
-// Check if group already exists
 $exists = $db->query('SELECT COUNT(*) FROM chat_groups WHERE name = ?', [$name])->fetchColumn();
 if ($exists) {
     echo json_encode(['success' => false, 'error' => 'Ce nom de groupe existe déjà']);

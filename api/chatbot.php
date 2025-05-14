@@ -3,10 +3,8 @@ require_once '../includes/config.php';
 require_once '../includes/database.php';
 require_once '../includes/session.php';
 
-// Start session
 Session::start();
 
-// Check if user is logged in
 if (!Session::isLoggedIn()) {
     http_response_code(401);
     echo json_encode(['error' => 'Unauthorized']);
@@ -22,16 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $data = json_decode(file_get_contents('php://input'), true);
 $message = strtolower($data['message'] ?? '');
 
-// Welcome message
 if (empty($message) || strpos($message, 'bonjour') !== false || strpos($message, 'salut') !== false) {
     echo json_encode([
         'success' => true,
-        'message' => 'Bonjour! Je suis l\'assistant SportMatchy. Comment puis-je vous aider aujourd\'hui?'
+        'message' => 'Bonjour! Je suis l\'assistant SportMatchy meilleur bot en nice. Comment puis-je vous aider aujourd\'hui?'
     ]);
     exit;
 }
 
-// Random responses for different categories
 $responses = [
     'events' => [
         'Pour créer un événement, cliquez sur le bouton "Créer un événement" dans le menu.',
@@ -65,7 +61,6 @@ $responses = [
     ]
 ];
 
-// Determine category based on keywords
 $category = 'default';
 if (strpos($message, 'événement') !== false || strpos($message, 'event') !== false) {
     $category = 'events';
@@ -77,7 +72,6 @@ if (strpos($message, 'événement') !== false || strpos($message, 'event') !== f
     $category = 'help';
 }
 
-// Get random response from category
 $response = $responses[$category][array_rand($responses[$category])];
 
 echo json_encode([

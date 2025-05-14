@@ -3,10 +3,8 @@ require_once 'includes/config.php';
 require_once 'includes/database.php';
 require_once 'includes/session.php';
 
-// Start session
 Session::start();
 
-// Redirect if not logged in
 if (!Session::isLoggedIn()) {
     header('Location: login.php');
     exit;
@@ -16,15 +14,12 @@ $db = Database::getInstance();
 $error = '';
 $success = '';
 
-// Get user's favorite sports
 $favoriteSports = $db->query("
     SELECT s.* 
     FROM sports s
     JOIN user_sport_preferences usp ON s.id = usp.sport_id
     WHERE usp.user_id = ?
 ", [Session::getUserId()])->fetchAll();
-
-// Get live matches from API (simulated data for now)
 $liveMatches = [
     [
         'id' => 1,
@@ -58,7 +53,6 @@ $liveMatches = [
     ]
 ];
 
-// Generate new CSRF token
 $csrfToken = Session::generateCSRFToken();
 ?>
 <!DOCTYPE html>

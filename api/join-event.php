@@ -29,10 +29,15 @@ if ($csrf && !Session::validateCSRFToken($csrf)) {
 
 $userId = Session::getUserId();
 $db = Database::getInstance();
-$exists = $db->query('SELECT COUNT(*) FROM event_participants WHERE event_id = ? AND user_id = ?', [$eventId, $userId])->fetchColumn();
-if ($exists) {
-    echo json_encode(['success' => false, 'error' => 'Déjà participant']);
-    exit;
-}
-$db->query('INSERT INTO event_participants (event_id, user_id, status) VALUES (?, ?, ?)', [$eventId, $userId, 'confirmed']);
-echo json_encode(['success' => true]); 
+try {
+    $exists = $db->query('SELECT COUNT(*) FROM event_participants WHERE event_id = ? AND user_id = ?', [$eventId, $userId])->fetchColumn();
+    if ($exists) {
+        echo json_encode(['success' => false, 'error' => 'Déjà participant']);
+        exit;
+    }
+    $db->query('INSERT INTO event_participants (event_id, user_id, status) VALUES (?, ?, ?)', [$eventId, $userId, 'joined']);
+    echo json_encode(['success' => true]);
+} catch (Exception $e) {
+    error_log($e->getMessage());
+    echo json_encode(['success' => false, 'error' => "Erreur lors de la participation : " . $e->getMessage()]);
+} 
